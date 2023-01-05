@@ -1,0 +1,34 @@
+package com.ekke.controllers;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+
+import com.ekke.entities.Countriestable;
+import com.ekke.models.OrszagokTabla;
+
+/**
+ * Session Bean implementation class OrszagokEJB
+ */
+@Stateless(mappedName = "OrszagokEJB")
+@LocalBean
+public class OrszagokEJB implements OrszagokEJBLocal {
+
+    /**
+     * Default constructor. 
+     */
+    public OrszagokEJB() {
+        // TODO Auto-generated constructor stub
+    }
+
+	@Override
+	public List<Countriestable> getList() {
+		// TODO Auto-generated method stub
+		//return new ArrayList<Countriestable>();
+		OrszagokTabla c = new OrszagokTabla();
+		return c.getList();
+	}
+
+}

@@ -1,0 +1,78 @@
+package com.ekke.entities;
+
+import java.io.Serializable;
+import javax.persistence.*;
+import java.util.List;
+
+/**
+ * The persistent class for the COUNTRIESTABLE database table.
+ * 
+ */
+@Entity
+@NamedQuery(name="Countriestable.findAll", query="SELECT c FROM Countriestable c")
+public class Countriestable implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@Column(name="V_COUNTRYID")
+	private long vCountryid;
+
+	@Column(name="V_COUNTRYNAME")
+	private String vCountryname;
+
+	//bi-directional many-to-one association to Teamstable
+	@OneToMany(mappedBy="countriestable")
+	private List<Teamstable> teamstables;
+
+	public Countriestable() {
+	}
+
+	public long getVCountryid() {
+		return this.vCountryid;
+	}
+
+	public void setVCountryid(long vCountryid) {
+		this.vCountryid = vCountryid;
+	}
+
+	public String getVCountryname() {
+		return this.vCountryname;
+	}
+
+	public void setVCountryname(String vCountryname) {
+		this.vCountryname = vCountryname;
+	}
+
+	public List<Teamstable> getTeamstables() {
+		return this.teamstables;
+	}
+
+	public void setTeamstables(List<Teamstable> teamstables) {
+		this.teamstables = teamstables;
+	}
+
+	public Teamstable addTeamstable(Teamstable teamstable) {
+		getTeamstables().add(teamstable);
+		teamstable.setCountriestable(this);
+
+		return teamstable;
+	}
+
+	public Teamstable removeTeamstable(Teamstable teamstable) {
+		getTeamstables().remove(teamstable);
+		teamstable.setCountriestable(null);
+
+		return teamstable;
+	}
+
+	@Override
+	public String toString() {
+		//return "Countriestable [vCountryid=" + vCountryid + ", vCountryname=" + vCountryname + "]";
+		return "messi";
+	}
+
+
+
+
+
+}

@@ -1,0 +1,41 @@
+package com.ekke.controllers;
+
+import java.util.List;
+
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+import com.ekke.entities.Countriestable;
+import com.ekke.models.OrszagokTabla;
+
+/**
+ * Session Bean implementation class OrszagokEJB
+ */
+@Stateless(mappedName = "OrszagokEJB")
+@LocalBean
+public class OrszagokEJB implements OrszagokEJBLocal {
+
+    /**
+     * Default constructor. 
+     */
+    public OrszagokEJB() {
+        // TODO Auto-generated constructor stub
+    }
+    @PersistenceContext
+    EntityManager em;
+    
+	@Override
+	public List<Countriestable> getList() {
+		// TODO Auto-generated method stub
+		//OrszagokTabla c = new OrszagokTabla();
+		//return c.getList();
+		return em.createNamedQuery("Countriestable.findAll", Countriestable.class).getResultList();
+	}
+	
+	/*@Override
+	public boolean insert(Countriestable country)
+	{*/
+
+}

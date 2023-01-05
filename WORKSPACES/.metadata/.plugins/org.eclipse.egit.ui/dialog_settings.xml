@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="EGit.KnownHosts">
+		<item value="bitbucket.org"/>
+		<item value="git.eclipse.org"/>
+		<item value="github.com"/>
+	</list>
+	<list key="RepositorySelectionPage.UsedUris">
+		<item value="https://github.com/vasas1d/KeretR_22_23.git"/>
+	</list>
+	<section name="org.eclipse.egit.ui.internal.staging.StagingView">
+		<item key="MAIN_SASH_FORM_ORIENTATION_VERTICAL" value="false"/>
+		<item key="HORIZONTAL_SASH_FORM_WEIGHT" value="500,500"/>
+		<item key="STAGING_SASH_FORM_WEIGHT" value="500,500"/>
+		<item key="sortItemState" value="false"/>
+	</section>
+	<section name="GitCommitMessageComponent">
+		<list key="C:\Users\Acer\Desktop\KERETRENDSZERBEADANDO\.git">
+			<item value="false"/>
+			<item value="vasas1d &lt;daniel.vasas1@gmail.com&gt;"/>
+			<item value="add project&#x0D;&#x0A;&#x0D;&#x0A;Change-Id: I0000000000000000000000000000000000000000&#x0D;&#x0A;"/>
+			<item value="vasas1d &lt;daniel.vasas1@gmail.com&gt;"/>
+			<item value="3f009a196ab9ac42bade9e39c2f000e3b3a19b0a"/>
+			<item value="0"/>
+			<item value="true"/>
+			<item value=""/>
+		</list>
+		<list key="C:\Users\Acer\Desktop\KERETRENDSZERBEADANDO\git\KeretR_22_23\.git">
+			<item value="false"/>
+			<item value="Acer &lt;daniel.vasas1@gmail.com&gt;"/>
+			<item value="add all project"/>
+			<item value="Acer &lt;daniel.vasas1@gmail.com&gt;"/>
+			<item value="2d1248ac1cbd709fb57f74ae8d3e9cd96d17c5ef"/>
+			<item value="0"/>
+			<item value="false"/>
+			<item value=""/>
+		</list>
+	</section>
+	<section name="org.eclipse.egit.ui.internal.dialogs.CheckoutDialog.dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="671"/>
+		<item key="DIALOG_Y_ORIGIN" value="206"/>
+		<item key="DIALOG_WIDTH" value="595"/>
+		<item key="DIALOG_HEIGHT" value="484"/>
+		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+	</section>
+</section>

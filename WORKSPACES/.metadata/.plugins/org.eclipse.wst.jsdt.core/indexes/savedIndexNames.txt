@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+C:\Users\Acer\Desktop\KERETRENDSZERBEADANDO\WORKSPACES\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+785692475.index
+1416599318.index
+24501553.index
+2708248612.index
+2431153528.index
+2123440167.index
+2922463410.index

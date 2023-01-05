@@ -1,0 +1,103 @@
+package com.ekke.entities;
+
+import java.io.Serializable;
+import javax.persistence.*;
+import java.math.BigDecimal;
+import java.util.List;
+
+
+/**
+ * The persistent class for the PLAYERSTABLE database table.
+ * 
+ */
+@Entity
+@NamedQuery(name="Playerstable.findAll", query="SELECT p FROM Playerstable p")
+public class Playerstable implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@Column(name="V_PLAYERID")
+	private long vPlayerid;
+
+	@Column(name="V_PLAYERAGE")
+	private BigDecimal vPlayerage;
+
+	@Column(name="V_PLAYERCLUB_ID")
+	private BigDecimal vPlayerclubId;
+
+	@Column(name="V_PLAYERNAME")
+	private String vPlayername;
+
+	@Column(name="V_PLAYERPOS")
+	private String vPlayerpos;
+
+	//bi-directional many-to-one association to Kapcsolotable
+	@OneToMany(mappedBy="playerstable")
+	private List<Kapcsolotable> kapcsolotables;
+
+	public Playerstable() {
+	}
+
+	public long getVPlayerid() {
+		return this.vPlayerid;
+	}
+
+	public void setVPlayerid(long vPlayerid) {
+		this.vPlayerid = vPlayerid;
+	}
+
+	public BigDecimal getVPlayerage() {
+		return this.vPlayerage;
+	}
+
+	public void setVPlayerage(BigDecimal vPlayerage) {
+		this.vPlayerage = vPlayerage;
+	}
+
+	public BigDecimal getVPlayerclubId() {
+		return this.vPlayerclubId;
+	}
+
+	public void setVPlayerclubId(BigDecimal vPlayerclubId) {
+		this.vPlayerclubId = vPlayerclubId;
+	}
+
+	public String getVPlayername() {
+		return this.vPlayername;
+	}
+
+	public void setVPlayername(String vPlayername) {
+		this.vPlayername = vPlayername;
+	}
+
+	public String getVPlayerpos() {
+		return this.vPlayerpos;
+	}
+
+	public void setVPlayerpos(String vPlayerpos) {
+		this.vPlayerpos = vPlayerpos;
+	}
+
+	public List<Kapcsolotable> getKapcsolotables() {
+		return this.kapcsolotables;
+	}
+
+	public void setKapcsolotables(List<Kapcsolotable> kapcsolotables) {
+		this.kapcsolotables = kapcsolotables;
+	}
+
+	public Kapcsolotable addKapcsolotable(Kapcsolotable kapcsolotable) {
+		getKapcsolotables().add(kapcsolotable);
+		kapcsolotable.setPlayerstable(this);
+
+		return kapcsolotable;
+	}
+
+	public Kapcsolotable removeKapcsolotable(Kapcsolotable kapcsolotable) {
+		getKapcsolotables().remove(kapcsolotable);
+		kapcsolotable.setPlayerstable(null);
+
+		return kapcsolotable;
+	}
+
+}

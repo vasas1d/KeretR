@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<syncparticipants>
+<participant displayName="Git (Project_EAR, ...stemsTempFiles)" id="org.eclipse.egit.ui.modelCompareParticipant" secondary_id="1672924244669">
+<data forceFetch="false" root="false">
+<org.eclipse.team.ui.MODEL_PARTICIPANT_SETTINGS org.eclipse.team.ui.MODEL_PARTICIPANT_DESCRIPTION="Project_EAR, ...stemsTempFiles" startupAction="none">
+<org.eclipse.team.ui.MODEL_PARTICIPANT_REFRESH_SCHEDULE org.eclipse.team.ui.CTX_REFRESHSCHEDULE_ENABLED="false" org.eclipse.team.ui.CTX_REFRESHSCHEDULE_INTERVAL="3600" org.eclipse.team.ui.CTX_REFRESHSCHEDULE_RUNONCE="false"/>
+<org.eclipse.team.ui.MODEL_PARTICIPANT_MAPPINGS modelProviderId="org.eclipse.core.resources.modelProvider">
+<mappings>
+<resources resourcePath="/RemoteSystemsTempFiles" resourceType="4"/>
+<resources resourcePath="/Project_JPA" resourceType="4"/>
+<resources resourcePath="/Project_EJBClient" resourceType="4"/>
+<resources resourcePath="/Project_WEB1" resourceType="4"/>
+<resources resourcePath="/Project_EAR" resourceType="4"/>
+<resources resourcePath="/Project_EJB" resourceType="4"/>
+<resources resourcePath="/Project_SERVLET" resourceType="4"/>
+</mappings>
+</org.eclipse.team.ui.MODEL_PARTICIPANT_MAPPINGS>
+</org.eclipse.team.ui.MODEL_PARTICIPANT_SETTINGS>
+</data>
+</participant>
+</syncparticipants>

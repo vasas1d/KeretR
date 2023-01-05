@@ -1,0 +1,82 @@
+package com.ekke.entities;
+
+import java.io.Serializable;
+import javax.persistence.*;
+import java.util.List;
+
+
+/**
+ * The persistent class for the TEAMSTABLE database table.
+ * 
+ */
+@Entity
+@NamedQuery(name="Teamstable.findAll", query="SELECT t FROM Teamstable t")
+public class Teamstable implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@Column(name="V_TEAM_ID")
+	private long vTeamId;
+
+	@Column(name="V_CLUBNAME")
+	private String vClubname;
+
+	//bi-directional many-to-one association to Kapcsolotable
+	@OneToMany(mappedBy="teamstable")
+	private List<Kapcsolotable> kapcsolotables;
+
+	//bi-directional many-to-one association to Countriestable
+	@ManyToOne
+	@JoinColumn(name="V_CLUBCOUNTRY_ID")
+	private Countriestable countriestable;
+
+	public Teamstable() {
+	}
+
+	public long getVTeamId() {
+		return this.vTeamId;
+	}
+
+	public void setVTeamId(long vTeamId) {
+		this.vTeamId = vTeamId;
+	}
+
+	public String getVClubname() {
+		return this.vClubname;
+	}
+
+	public void setVClubname(String vClubname) {
+		this.vClubname = vClubname;
+	}
+
+	public List<Kapcsolotable> getKapcsolotables() {
+		return this.kapcsolotables;
+	}
+
+	public void setKapcsolotables(List<Kapcsolotable> kapcsolotables) {
+		this.kapcsolotables = kapcsolotables;
+	}
+
+	public Kapcsolotable addKapcsolotable(Kapcsolotable kapcsolotable) {
+		getKapcsolotables().add(kapcsolotable);
+		kapcsolotable.setTeamstable(this);
+
+		return kapcsolotable;
+	}
+
+	public Kapcsolotable removeKapcsolotable(Kapcsolotable kapcsolotable) {
+		getKapcsolotables().remove(kapcsolotable);
+		kapcsolotable.setTeamstable(null);
+
+		return kapcsolotable;
+	}
+
+	public Countriestable getCountriestable() {
+		return this.countriestable;
+	}
+
+	public void setCountriestable(Countriestable countriestable) {
+		this.countriestable = countriestable;
+	}
+
+}

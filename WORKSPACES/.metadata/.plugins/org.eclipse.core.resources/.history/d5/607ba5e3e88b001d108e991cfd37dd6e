@@ -1,0 +1,20 @@
+package com.ekke.controllers;
+
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+
+/**
+ * Session Bean implementation class OrszagokEJB
+ */
+@Stateless(mappedName = "OrszagokEJB")
+@LocalBean
+public class OrszagokEJB implements OrszagokEJBLocal {
+
+    /**
+     * Default constructor. 
+     */
+    public OrszagokEJB() {
+        // TODO Auto-generated constructor stub
+    }
+
+}

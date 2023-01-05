@@ -1,0 +1,52 @@
+create table CountriesTable
+(
+v_countryid number(5) not null,
+v_countryname varchar2(25) not null,
+ constraint countryid_pk primary key(v_countryid)
+);
+create table TeamsTable
+(
+v_team_id number(5) not null,
+v_clubname varchar2(25) not null,
+v_clubcountry_id number(5) not null,
+ constraint teams_fk FOREIGN KEY (v_clubcountry_id) REFERENCES CountriesTable(v_countryid),
+ constraint teamid_pk primary key(v_team_id)
+);
+create table PlayersTable
+(
+v_playerid number(5) not null,
+v_playername varchar2(25) not null,
+v_playerclub_id number(5) not null,
+v_playerpos varchar2(5) not null,
+v_playerage number(5) not null,
+  constraint playerid_pk primary key(v_playerid),
+  constraint uq__players_kp unique(v_playername)
+);
+
+create table KapcsoloTable
+(
+v_k_id number(5),
+v_cid number(5),
+v_pid number(5),
+v_isteamclub number(1) default 1 not null,
+	constraint kapcsoloid_pk primary key(v_k_id),
+	constraint kapcsolokp1 FOREIGN KEY (v_cid) REFERENCES TeamsTable(v_team_id),
+	constraint kapcsolokp2 FOREIGN KEY (v_pid) REFERENCES PlayersTable(v_playerid)
+);
+
+insert into CountriesTable values(1,'Spanyolorszag');
+insert into CountriesTable values(2,'Anglia');
+insert into CountriesTable values(3,'Argentina');
+
+
+insert into TeamsTable values(100,'Barcelona',1);
+insert into TeamsTable values(101,'Liverpool',2);
+insert into TeamsTable values(102,'Argentin nemzeti csapat',3);
+insert into TeamsTable values(103,'Spanyol nemzeti csapat',1);
+
+insert into PlayersTable values(1000,'Messi',100,'LW',35);
+insert into PlayersTable values(1001,'Thiago',101,'KK',30);
+
+insert into KapcsoloTable values(678,100,1000,1);
+insert into KapcsoloTable values(679,103,1001,2);
+insert into KapcsoloTable values(680,100,1000,2);
